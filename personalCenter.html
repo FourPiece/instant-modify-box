@@ -1,0 +1,40 @@
+<html>
+
+	
+	<head>
+		<title>个人中心</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<link rel="stylesheet" href="./js/element-ui/theme-chalk/index.css">
+		<link rel="stylesheet" href="./css/personalCenter.css">
+	</head>
+
+	<body>
+		<div id="app" class="mainContent" v-cloak>
+			<div class="contentDiv" style="margin-bottom: 0px;width:99.99%;height: auto;">
+				<div class="tableDiv">
+					<template>
+						<el-table :data="userInfo" style="width: 100%">
+							<el-table-column label="个人资料">
+								<template slot-scope="scope">
+									<i title="取消" class="el-icon-back updateI" style="display:none" @click="backMsg(scope.row)"></i>
+									<i title="保存" class="el-icon-success updateI" style="display:none" @click="saveMsg(scope.row)"></i>
+									<i class="el-icon-edit updateI" @click="updateMsg(scope.row)"></i>
+									<span>{{scope.row.property}}</span>
+									<span :id="getId(scope.row)">{{scope.row.value}}</span>
+								</template>
+							</el-table-column>
+						</el-table>
+					</template>
+				</div>
+			</div>
+		</div>
+		<script src="./js/vue.min.js"></script>
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/element-ui/element-index.js"></script>
+		<script src="./js/personalCenter.js"></script>
+		
+	</body>
+
+</html>
